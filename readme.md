@@ -11,3 +11,7 @@ Penggunaan URL yang sama berarti bahwa program *publisher* dan *subscriber* **te
 ### Make it work!
 ![Screenshot Console](Screenshot.png)
 **Penjelasan:** Saat `publisher` dijalankan, program tersebut mengirimkan 5 antrean event ke RabbitMQ. Di sisi lain, program `subscriber` yang sedang berjalan (dan terus mendengarkan) langsung menerima dan memproses kelima pesan tersebut secara berurutan.
+
+### Monitoring Chart
+![Screenshot Chart](Screenshot1.png)
+**Penjelasan:** Lonjakan (spike) pada grafik terjadi karena `publisher` mengirimkan banyak pesan (event) dalam waktu yang sangat singkat ke dalam antrean (queue) RabbitMQ. Message broker mencatat lonjakan *publish rate* ini saat menerima data, lalu memberikannya ke *subscriber* yang terhubung.
